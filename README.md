@@ -2,7 +2,7 @@
 
 Cell-Specific Ligand-Receptor Pair Prediction Algorithm
 
-![](E:\HIAS\Cell_Communication\CellSpecLR_github\CellSpecLR\figure1.png)
+<img src="./figure1.png" title="" alt="" data-align="inline">
 
 ## How to use CellSpecLR
 
