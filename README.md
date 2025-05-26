@@ -9,8 +9,9 @@ This innovative approach can enhance our understanding of biological processes a
 utility of our approach, we have also developed a user-friendly, multispecies L-R database website (http://compbiol.top:2023/CSMSLRdb).
 
 # Requirements
-python==3.7
-numpy==1.21.6
-pandas==1.3.5
-torch==1.10.1
-scipy==1.7.3
+python==3.7  
+numpy==1.21.6  
+pandas==1.3.5  
+torch==1.10.1  
+scipy==1.7.3  
+
