@@ -1,5 +1,5 @@
 # CellSpecLR
-! [image](https://github.com/liaoxy-16/CellSpecLR/blob/master/fig1.png)
+![image](https://github.com/liaoxy-16/CellSpecLR/blob/master/fig1.png)
 
 # Abstract
 Ligand-receptor (L-R) interactions play a critical role in cell-cell communication, signal transduction and immune response, making their accurate prediction essential for understanding biological processes and 
