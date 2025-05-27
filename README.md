@@ -19,7 +19,7 @@ scipy==1.7.3
 
 ## 01 MDIC3.py: Compute Cell-Cell Communication Matrix
 ### Input Files:
-1 Gene Expression File (.txt)
+1 Gene Expression File (.txt)<br>
 Rows represent gene names. <br>
 Columns represent individual cells, indexed starting from 0. (e.g., 0, 1, 2, ...) <br>
 
@@ -38,12 +38,12 @@ Determines the proportion of cell pairs with the highest communication weights t
 Default: 0.25 (i.e., the top 25% of cell pairs with the highest absolute communication weights are considered as having communication).<br>
 
 ### Output Files
-1 CCC_Network.csv.<br>
+1 CCC_Network.csv<br>
 A communication weight matrix.<br>
 Row and column indices represent cell indices.<br>
 Values indicate the communication weight from one cell to another.<br>
 
-2 CCC_Network_binaryzation.csv.<br>
+2 CCC_Network_binaryzation.csv<br>
 A binarized version of the communication matrix.<br>
 Cell pairs with absolute weights in the top percentage (defined by threshold) are marked as 1 (indicating communication), others as 0.<br>
 
@@ -72,68 +72,68 @@ Contains three columns: source cell type, target cell type, and communication we
 
 ## 03 Reward.py: Compute Reward Score Between Genes
 ### Input Files
-1 Gene Expression File (.txt)
-Rows represent genes
-Columns represent cells indexed from 0
-2 Cell Type File (.txt)
-Two columns: index (cell index) and label (cell type)
-3 CCC_Network_binaryzation.csv
-A binary matrix indicating cell-cell communication
-4 Cell_Type_Comm_Weight_sort.csv
-Ranked communication weights between cell types
-Includes three columns: source type, target type, weight
-5 Parameters:
-Threshold (default = 0.3):
-Retain genes with non-zero expression in more than 30% of the target cells involved in communication
-top_n_pairs (default = 5):
-Only the top N cell-type communication pairs are considered for computing gene associations
+1 Gene Expression File (.txt)<br>
+Rows represent genes.<br>
+Columns represent cells indexed from 0.<br>
+2 Cell Type File (.txt)<br>
+Two columns: index (cell index) and label (cell type).<br>
+3 CCC_Network_binaryzation.csv<br>
+A binary matrix indicating cell-cell communication.<br>
+4 Cell_Type_Comm_Weight_sort.csv<br>
+Ranked communication weights between cell types.<br>
+Includes three columns: source type, target type, weight.<br>
+5 Parameters:<br>
+Threshold (default = 0.3):<br>
+Retain genes with non-zero expression in more than 30% of the target cells involved in communication.<br>
+top_n_pairs (default = 5):<br>
+Only the top N cell-type communication pairs are considered for computing gene associations.<br>
 
 ### Output File
-Reward Matrix
-A square matrix where rows and columns are gene names
-Each value represents the Reward score between a pair of genes
+Reward Matrix:<br>
+A square matrix where rows and columns are gene names.<br>
+Each value represents the Reward score between a pair of genes.<br>
 
 ## 04 Penalty.py: Compute Penalty Score Between Genes
 ### Input Files
-1 Gene Expression File (.txt)
-Rows = genes, columns = cell indices (starting from 0)
-2 Cell Type File (.txt)
-Includes index (cell ID) and label (cell type)
-3 CCC_Network_binaryzation.csv
-A binary matrix indicating whether a cell pair has significant communication (1 or 0)
-4 Cell_Type_Comm_Weight_sort.csv
-Ranked communication weights between cell types
-5 Parameters:
-Threshold (default = 0.3):
-Retain genes expressed in more than 30% of the target cells involved in communication
-top_n_pairs (default = 5):
-Use only the top N communicating cell-type pairs to evaluate gene relationships
+1 Gene Expression File (.txt)<br>
+Rows = genes, columns = cell indices (starting from 0).<br>
+2 Cell Type File (.txt)<br>
+Includes index (cell ID) and label (cell type).<br>
+3 CCC_Network_binaryzation.csv<br>
+A binary matrix indicating whether a cell pair has significant communication (1 or 0).<br>
+4 Cell_Type_Comm_Weight_sort.csv<br>
+Ranked communication weights between cell types.<br>
+5 Parameters:<br>
+Threshold (default = 0.3):<br>
+Retain genes expressed in more than 30% of the target cells involved in communication.<br>
+top_n_pairs (default = 5):<br>
+Use only the top N communicating cell-type pairs to evaluate gene relationships.<br>
 
 ### Output File
-Penalty Matrix
-Rows and columns are gene names
-Values represent the Penalty score between each gene pair
+Penalty Matrix:<br>
+Rows and columns are gene names.<br>
+Values represent the Penalty score between each gene pair.<br>
 
 ## 05 Dependency.py: Compute Dependency Score Between Genes
 ### Input Files
-1 Gene Expression File (.txt)
-Rows = genes, columns = cell indices (starting from 0)
+1 Gene Expression File (.txt)<br>
+Rows = genes, columns = cell indices (starting from 0).<br>
 
-2 Cell Type File (.txt)
-Two columns: index (cell ID) and label (cell type)
+2 Cell Type File (.txt)<br>
+Two columns: index (cell ID) and label (cell type).<br>
 
-3 CCC_Network_binaryzation.csv
-Binary communication matrix (1 for significant communication, 0 otherwise)
+3 CCC_Network_binaryzation.csv<br>
+Binary communication matrix (1 for significant communication, 0 otherwise).<br>
 
-4 Cell_Type_Comm_Weight_sort.csv
-Ranked communication weights between cell types
+4 Cell_Type_Comm_Weight_sort.csv<br>
+Ranked communication weights between cell types.<br>
 
-5 Parameter:
-Threshold (default = 0.3):
-Retain genes expressed in more than 30% of the target cells involved in communication
+5 Parameter:<br>
+Threshold (default = 0.3):<br>
+Retain genes expressed in more than 30% of the target cells involved in communication.<br>
 
 ### Output File
-Dependency Matrix
-A gene-gene matrix with Dependency scores
-Row and column names are gene identifiers
+Dependency Matrix:<br>
+A gene-gene matrix with Dependency scores.<br>
+Row and column names are gene identifiers.<br>
 
