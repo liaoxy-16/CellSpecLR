@@ -15,3 +15,25 @@ pandas==1.3.5
 torch==1.10.1  
 scipy==1.7.3  
 
+# Code Usage Instructions
+
+## MDIC3.py: Compute Cell-to-Cell Communication Matrix
+### Input Files:
+1 Gene Expression File (.txt)
+Rows represent gene names
+Columns represent individual cells, indexed starting from 0 (e.g., 0, 1, 2, ...)
+
+2 Cell Type Annotation File (.txt)
+Contains two columns: index and label
+index: cell indices starting from 0
+label: the corresponding cell type for each cell
+
+3 Gene Regulatory Network File (.txt)
+Both rows and columns are gene names
+Values represent the regulatory weight of the column gene on the row gene
+
+4 Threshold Parameter:
+A float between 0 and 1
+Determines the proportion of cell pairs with the highest communication weights to be retained
+Default: 0.25 (i.e., the top 25% of cell pairs with the highest absolute communication weights are considered as having communication)
+
