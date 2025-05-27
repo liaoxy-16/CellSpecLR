@@ -136,71 +136,71 @@ Row and column names are gene identifiers.<br>
 
 ## 06 Generate_protein_feature_vectors.py: Generate Protein Feature Vectors
 ### Input Files
-1 SL_aaindex_feature.csv
-Rows: amino acid symbols
-Columns: physicochemical properties associated with each amino acid
+1 SL_aaindex_feature.csv<br>
+Rows: amino acid symbols.<br>
+Columns: physicochemical properties associated with each amino acid.<br>
 
-2 Protein Sequence File
-Must contain a column named Sequence that holds amino acid sequences
+2 Protein Sequence File<br>
+Must contain a column named Sequence that holds amino acid sequences.<br>
 
 ### Output File
-1 Protein Feature Vector File
-The original file with the Sequence column removed
-Replaced by 200 new columns: feature1 to feature200, representing numerical features for each protein
+1 Protein Feature Vector File<br>
+The original file with the Sequence column removed.<br>
+Replaced by 200 new columns: feature1 to feature200, representing numerical features for each protein.<br>
 
 ## 07 CNN-MAPLM_train.py: Train the CNN-MAPLM Model
 ### Input File
-1 Protein Feature File
-Must include:
-feature1 ~ feature200: a 200-dimensional feature vector for each protein
+1 Protein Feature File<br>
+Must include:<br>
+feature1 ~ feature200: a 200-dimensional feature vector for each protein.<br>
 label: a binary indicator
-1: membrane-associated protein (potential receptor gene)
-0: non-membrane-associated protein
+1: membrane-associated protein (potential receptor gene).<br>
+0: non-membrane-associated protein.<br>
 
 ### Output Files
-1 Cross-Validation Models
-Best-performing model for each fold in 10-fold cross-validation
+1 Cross-Validation Models<br>
+Best-performing model for each fold in 10-fold cross-validation.<br>
 
-2 results.csv
-Performance metrics recorded for each test fold (e.g., accuracy, precision, recall)
+2 results.csv<br>
+Performance metrics recorded for each test fold (e.g., accuracy, precision, recall).<br>
 
 ## 08 CNN-MAPLM_test.py: Test the CNN-MAPLM Model
 ### Input File
-1 Protein Feature File
-Must contain:
-feature1 ~ feature200: numerical descriptors of proteins
+1 Protein Feature File<br>
+Must contain:<br>
+feature1 ~ feature200: numerical descriptors of proteins.<br>
 
 ### Output File
-1 Predicted Labels
-The model outputs a label (1 or 0) indicating whether each protein is predicted to be membrane-associated
+1 Predicted Labels<br>
+The model outputs a label (1 or 0) indicating whether each protein is predicted to be membrane-associated.<br>
 
 ## 09 EAS.py: Calculate Expression Association Strength (EAS)
 ### Input Folders
-1 ./Results_Reward/
-Contains Reward matrices for each cell-type communication pair
-File naming: {out_cell_type}_{in_cell_type}_Reward.txt
+1 ./Results_Reward/<br>
+Contains Reward matrices for each cell-type communication pair.<br>
+File naming: {out_cell_type}_{in_cell_type}_Reward.txt.<br>
 
-2 ./Results_Penalty/
-Contains Penalty matrices for each cell-type communication pair
-File naming: {out_cell_type}_{in_cell_type}_Penalty.txt
+2 ./Results_Penalty/<br>
+Contains Penalty matrices for each cell-type communication pair.<br>
+File naming: {out_cell_type}_{in_cell_type}_Penalty.txt.<br>
 
-3 ./Results_Dependency/
-Contains Dependency matrices for each cell-type communication pair
-File naming: {out_cell_type}_{in_cell_type}_Dependency.txt
+3 ./Results_Dependency/<br>
+Contains Dependency matrices for each cell-type communication pair.<br>
+File naming: {out_cell_type}_{in_cell_type}_Dependency.txt.<br>
 
 ### Output Folder
-1 ./Results/
-Stores sorted gene-gene EAS scores for each cell-type communication pair
-File naming: {out_cell_type}_{in_cell_type}_EAS_sort.txt
+1 ./Results/<br>
+Stores sorted gene-gene EAS scores for each cell-type communication pair.<br>
+File naming: {out_cell_type}_{in_cell_type}_EAS_sort.txt.<br>
 
 ## 10 EAS_CNN-MAPLM.py: Filter Potential Receptor Genes Using CNN-MAPLM Predictions
 ### Input Folder
-./Results/
-Contains EAS-sorted gene-gene files for each communicating cell-type pair
+./Results/<br>
+Contains EAS-sorted gene-gene files for each communicating cell-type pair.<br>
 
 ### Output Folder
-./Results_filter/
-Stores filtered EAS files for each cell-type pair, containing only gene pairs associated with CNN-MAPLM-predicted receptor genes
+./Results_filter/<br>
+Stores filtered EAS files for each cell-type pair, containing only gene pairs associated with CNN-MAPLM-predicted receptor genes.<br>
 
 
 
