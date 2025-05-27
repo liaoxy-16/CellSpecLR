@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-def compute_GAS_scores(
+def compute_EAS_scores(
     reward_folder: str = "./Results_Reward",
     penalty_folder: str = "./Results_Penalty",
     dependency_folder: str = "./Results_Dependency",
@@ -64,14 +64,14 @@ def compute_GAS_scores(
             scale_factor_dependency = max3 / max4
             df_dependency *= scale_factor_dependency
 
-            df_gas = df_reward_penalty + df_dependency
+            df_EAS = df_reward_penalty + df_dependency
 
-            long_df = df_gas.stack().reset_index()
-            long_df.columns = ['ligand', 'receptor', 'GAS']
-            sorted_df = long_df.sort_values(by='GAS', ascending=False)
+            long_df = df_EAS.stack().reset_index()
+            long_df.columns = ['ligand', 'receptor', 'EAS']
+            sorted_df = long_df.sort_values(by='EAS', ascending=False)
 
-            final_csv = os.path.join(output_folder, f"{cell_type_pair}_GAS_sort.csv")
-            final_txt = os.path.join(output_folder, f"{cell_type_pair}_GAS_sort.txt")
+            final_csv = os.path.join(output_folder, f"{cell_type_pair}_EAS_sort.csv")
+            final_txt = os.path.join(output_folder, f"{cell_type_pair}_EAS_sort.txt")
             sorted_df.to_csv(final_csv, index=False)
             sorted_df.to_csv(final_txt, index=False, sep='\t')
 
@@ -80,7 +80,7 @@ def compute_GAS_scores(
     print(f"\nAll files have been processed and the results are saved in {output_folder}")
 
 
-compute_GAS_scores(
+compute_EAS_scores(
     reward_folder="./Results_Reward",
     penalty_folder="./Results_Penalty",
     dependency_folder="./Results_Dependency",
