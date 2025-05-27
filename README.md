@@ -20,53 +20,53 @@ scipy==1.7.3
 ## 01 MDIC3.py: Compute Cell-Cell Communication Matrix
 ### Input Files:
 1 Gene Expression File (.txt)
-Rows represent gene names <br>
-Columns represent individual cells, indexed starting from 0 (e.g., 0, 1, 2, ...) <br>
+Rows represent gene names. <br>
+Columns represent individual cells, indexed starting from 0. (e.g., 0, 1, 2, ...) <br>
 
 2 Cell Type Annotation File (.txt) <br>
-Contains two columns: index and label <br>
-index: cell indices starting from 0 <br>
-label: the corresponding cell type for each cell <br>
+Contains two columns: index and label. <br>
+index: cell indices starting from 0. <br>
+label: the corresponding cell type for each cell. <br>
 
 3 Gene Regulatory Network File (.txt)
-Both rows and columns are gene names
-Values represent the regulatory weight of the column gene on the row gene
+Both rows and columns are gene names. <br>
+Values represent the regulatory weight of the column gene on the row gene. <br>
 
-4 Threshold Parameter:
-A float between 0 and 1
-Determines the proportion of cell pairs with the highest communication weights to be retained
-Default: 0.25 (i.e., the top 25% of cell pairs with the highest absolute communication weights are considered as having communication)
+4 Threshold Parameter:<br>
+A float between 0 and 1. <br>
+Determines the proportion of cell pairs with the highest communication weights to be retained.<br>
+Default: 0.25 (i.e., the top 25% of cell pairs with the highest absolute communication weights are considered as having communication).<br>
 
 ### Output Files
-1 CCC_Network.csv
-A communication weight matrix
-Row and column indices represent cell indices
-Values indicate the communication weight from one cell to another
+1 CCC_Network.csv.<br>
+A communication weight matrix.<br>
+Row and column indices represent cell indices.<br>
+Values indicate the communication weight from one cell to another.<br>
 
-2 CCC_Network_binaryzation.csv
-A binarized version of the communication matrix
-Cell pairs with absolute weights in the top percentage (defined by threshold) are marked as 1 (indicating communication), others as 0
+2 CCC_Network_binaryzation.csv.<br>
+A binarized version of the communication matrix.<br>
+Cell pairs with absolute weights in the top percentage (defined by threshold) are marked as 1 (indicating communication), others as 0.<br>
 
 ## 02 Cell_Type_Comm_Weight.py: Compute Communication Weights Between Cell Types
 ### Input Files
-1 CCC_Network_binaryzation.csv
-A binary cell-to-cell communication matrix
-Rows and columns represent cell indices
-Value = 1 indicates communication exists between the two cells; 0 indicates no communication
-2 Cell Type File (.txt)
-A two-column table with:
-index: cell index (starting from 0)
-label: corresponding cell type
+1 CCC_Network_binaryzation.csv<br>
+A binary cell-to-cell communication matrix.<br>
+Rows and columns represent cell indices.<br>
+Value = 1 indicates communication exists between the two cells; 0 indicates no communication.<br>
+2 Cell Type File (.txt)<br>
+A two-column table with:<br>
+index: cell index (starting from 0).<br>
+label: corresponding cell type.<br>
 
 ### Output Files
-1 Cell_Type_count.csv
-A table listing each cell type along with the number of cells
-2 Cell_Type_Comm_Weight.csv
-A matrix with cell types as both rows and columns
-Each value represents the total communication weight from one cell type to another
-3 Cell_Type_Comm_Weight_sort.csv
-A ranked list of cell-type pairs based on their communication weights
-Contains three columns: source cell type, target cell type, and communication weight
+1 Cell_Type_count.csv<br>
+A table listing each cell type along with the number of cells.<br>
+2 Cell_Type_Comm_Weight.csv<br>
+A matrix with cell types as both rows and columns.<br>
+Each value represents the total communication weight from one cell type to another.<br>
+3 Cell_Type_Comm_Weight_sort.csv<br>
+A ranked list of cell-type pairs based on their communication weights.<br>
+Contains three columns: source cell type, target cell type, and communication weight.<br>
 
 
 
