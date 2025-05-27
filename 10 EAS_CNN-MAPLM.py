@@ -17,7 +17,7 @@ genes_to_keep = set(filtered_genes)
 print(f'sum(label=1)：{len(genes_to_keep)}')
 
 for file_name in os.listdir(results_folder):
-    if file_name.endswith('_GAS_sort.txt'):
+    if file_name.endswith('_EAS_sort.txt'):
         input_file_path = os.path.join(results_folder, file_name)
         print(f'{input_file_path}')
 
