@@ -49,6 +49,7 @@ Cell pairs with absolute weights in the top percentage (defined by threshold) ar
 A binary cell-to-cell communication matrix.<br>
 Rows and columns represent cell indices.<br>
 Value = 1 indicates communication exists between the two cells; 0 indicates no communication.<br>
+
 2 Cell Type File (.txt)<br>
 A two-column table with:<br>
 index: cell index (starting from 0).<br>
@@ -57,9 +58,11 @@ label: corresponding cell type.<br>
 ### Output Files
 1 Cell_Type_count.csv<br>
 A table listing each cell type along with the number of cells.<br>
+
 2 Cell_Type_Comm_Weight.csv<br>
 A matrix with cell types as both rows and columns.<br>
 Each value represents the total communication weight from one cell type to another.<br>
+
 3 Cell_Type_Comm_Weight_sort.csv<br>
 A ranked list of cell-type pairs based on their communication weights.<br>
 Contains three columns: source cell type, target cell type, and communication weight.<br>
@@ -71,13 +74,17 @@ Contains three columns: source cell type, target cell type, and communication we
 1 Gene Expression File (.txt)<br>
 Rows represent genes.<br>
 Columns represent cells indexed from 0.<br>
+
 2 Cell Type File (.txt)<br>
 Two columns: index (cell index) and label (cell type).<br>
+
 3 CCC_Network_binaryzation.csv<br>
 A binary matrix indicating cell-cell communication.<br>
+
 4 Cell_Type_Comm_Weight_sort.csv<br>
 Ranked communication weights between cell types.<br>
 Includes three columns: source type, target type, weight.<br>
+
 5 Parameters:<br>
 Threshold (default = 0.3):<br>
 Retain genes with non-zero expression in more than 30% of the target cells involved in communication.<br>
@@ -93,12 +100,16 @@ Each value represents the Reward score between a pair of genes.<br>
 ### Input Files
 1 Gene Expression File (.txt)<br>
 Rows = genes, columns = cell indices (starting from 0).<br>
+
 2 Cell Type File (.txt)<br>
 Includes index (cell ID) and label (cell type).<br>
+
 3 CCC_Network_binaryzation.csv<br>
 A binary matrix indicating whether a cell pair has significant communication (1 or 0).<br>
+
 4 Cell_Type_Comm_Weight_sort.csv<br>
 Ranked communication weights between cell types.<br>
+
 5 Parameters:<br>
 Threshold (default = 0.3):<br>
 Retain genes expressed in more than 30% of the target cells involved in communication.<br>
