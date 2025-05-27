@@ -20,13 +20,13 @@ scipy==1.7.3
 ## 01 MDIC3.py: Compute Cell-Cell Communication Matrix
 ### Input Files:
 1 Gene Expression File (.txt)
-Rows represent gene names
-Columns represent individual cells, indexed starting from 0 (e.g., 0, 1, 2, ...)
+Rows represent gene names <br>
+Columns represent individual cells, indexed starting from 0 (e.g., 0, 1, 2, ...) <br>
 
-2 Cell Type Annotation File (.txt)
-Contains two columns: index and label
-index: cell indices starting from 0
-label: the corresponding cell type for each cell
+2 Cell Type Annotation File (.txt) <br>
+Contains two columns: index and label <br>
+index: cell indices starting from 0 <br>
+label: the corresponding cell type for each cell <br>
 
 3 Gene Regulatory Network File (.txt)
 Both rows and columns are gene names
