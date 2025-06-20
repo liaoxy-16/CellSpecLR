@@ -294,11 +294,12 @@ feature1 ~ feature200: a 200-dimensional feature vector for each protein.<br>
 label: a binary indicator
 1: membrane-associated protein (potential receptor gene).<br>
 0: non-membrane-associated protein.<br>
-|Name|label|feature 1|feature 2| ...  |feature 200|
-|------|------|------|------|------|
-|  ... |      |      |      |      |
-|  ... |      |      |      |      |
-|  ... |      |      |      |      |
+
+|Name|label|feature 1|feature 2| ...|feature 200|
+|------|------|------|------|------|------|
+|  ... |      |      |      |      |      |
+|  ... |      |      |      |      |      |
+|  ... |      |      |      |      |      |
 
 #### Output Files
 1 Cross-Validation Models<br>
