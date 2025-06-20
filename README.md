@@ -124,6 +124,11 @@ File naming format: {out_cell_type}_{in_cell_type}_EAS_sort.txt, representing th
 1 Gene Expression File (.txt)<br>
 Rows represent gene names. <br>
 Columns represent individual cells, indexed starting from 0. (e.g., 0, 1, 2, ...) <br>
+|       | 0   | 1   | 2   |
+|-------|-----|-----|-----|
+| gene1 |     |     |     |
+| gene2 |     |     |     |
+| gene3 |     |     |     |
 
 2 Cell Type Annotation File (.txt) <br>
 Contains two columns: index and label. <br>
