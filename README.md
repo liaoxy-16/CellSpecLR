@@ -131,22 +131,17 @@ Columns represent individual cells, indexed starting from 0. (e.g., 0, 1, 2, ...
 |  ...  |     |     |     |     |
 |gene m |     |     |     |     |
 
-2 Cell Type Annotation File (.txt) <br>
-Contains two columns: index and label. <br>
-index: cell indices starting from 0. <br>
-label: the corresponding cell type for each cell. <br>
-|index|label|
-|-----|-----|
-|0    |     |  
-|1    |     |   
-| ... |     |     
-|n    |     | 
-
-3 Gene Regulatory Network File (.txt)
+2 Gene Regulatory Network File (.txt)
 Both rows and columns are gene names. <br>
 Values represent the regulatory weight of the column gene on the row gene. <br>
+|      |gene 1|gene 2| ...  |gene m|
+|------|------|------|------|------|
+|gene 1|      |      |      |      |
+|gene 2|      |      |      |      |
+|  ... |      |      |      |      |
+|gene m|      |      |      |      |
 
-4 Threshold Parameter:<br>
+3 Threshold Parameter:<br>
 A float between 0 and 1. <br>
 Determines the proportion of cell pairs with the highest communication weights to be retained.<br>
 Default: 0.25 (i.e., the top 25% of cell pairs with the highest absolute communication weights are considered as having communication).<br>
@@ -168,10 +163,16 @@ A binary cell-to-cell communication matrix.<br>
 Rows and columns represent cell indices.<br>
 Value = 1 indicates communication exists between the two cells; 0 indicates no communication.<br>
 
-2 Cell Type File (.txt)<br>
-A two-column table with:<br>
-index: cell index (starting from 0).<br>
-label: corresponding cell type.<br>
+2 Cell Type File (.txt) <br>
+Contains two columns: index and label. <br>
+index: cell indices starting from 0. <br>
+label: the corresponding cell type for each cell. <br>
+|index|label|
+|-----|-----|
+|  0  |     |  
+|  1  |     |   
+| ... |     |     
+|  n  |     | 
 
 #### Output Files
 1 Cell_Type_count.csv<br>
