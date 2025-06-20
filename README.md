@@ -19,38 +19,38 @@ Below is the standard workflow and description of each script in this project:
 Run the script python MDIC3_01.py to compute the cell-cell communication matrix.
 
 #### Input files:
-Gene expression matrix: ./data/example_data.txt
-Gene regulatory network matrix: ./data/example_GRN.txt
+Gene expression matrix: ./data/example_data.txt<br>
+Gene regulatory network matrix: ./data/example_GRN.txt<br>
 
 #### Output files:
-Communication matrix: ./data/CCC_Network.csv
-Binarized communication matrix: ./data/CCC_Network_binaryzation.csv
+Communication matrix: ./data/CCC_Network.csv<br>
+Binarized communication matrix: ./data/CCC_Network_binaryzation.csv<br>
 
 ### 2. Calculate Communication Weights Between Cell Types
 Run the script python Cell_Type_Comm_Weight_02.py to compute communication weights among different cell types.
 
 #### Input files:
-Binarized communication matrix: ./data/CCC_Network_binaryzation.csv
-Cell type annotation file: ./data/example_label.txt
+Binarized communication matrix: ./data/CCC_Network_binaryzation.csv<br>
+Cell type annotation file: ./data/example_label.txt<br>
 
 #### Output files:
-Cell type counts: Cell_Type_count.csv
-Cell-type communication weight matrix: Cell_Type_Comm_Weight.csv
-Sorted communication weights: Cell_Type_Comm_Weight_sort.csv
+Cell type counts: Cell_Type_count.csv<br>
+Cell-type communication weight matrix: Cell_Type_Comm_Weight.csv<br>
+Sorted communication weights: Cell_Type_Comm_Weight_sort.csv<br>
 
 
 ### 3. Compute the Reward Metric
 Run the script python Reward_03.py to calculate the Reward metric for each communicating cell-type pair.
 
 #### Input files:
-Gene expression matrix: ./data/example_data.txt
-Cell type annotation: ./data/example_label.txt
-Binarized communication matrix: ./data/CCC_Network_binaryzation.csv
-Sorted communication weight file: Cell_Type_Comm_Weight_sort.csv
+Gene expression matrix: ./data/example_data.txt<br>
+Cell type annotation: ./data/example_label.txt<br>
+Binarized communication matrix: ./data/CCC_Network_binaryzation.csv<br>
+Sorted communication weight file: Cell_Type_Comm_Weight_sort.csv<br>
 
 #### Output directory:
-All results are saved in ./Results_Reward/
-File naming format: {out_cell_type}_{in_cell_type}_Reward.txt
+All results are saved in ./Results_Reward/<br>
+File naming format: {out_cell_type}_{in_cell_type}_Reward.txt<br>
 
 ### 4. Compute the Penalty Metric
 Run the script python Penalty_04.py to calculate the Penalty metric.
@@ -72,8 +72,8 @@ File naming format: {out_cell_type}_{in_cell_type}_Dependency.txt
 Run the script python Generate_protein_feature_vectors_06.py
 
 #### Input files:
-Physicochemical properties: ./data/aaindex/SL_aaindex_feature.csv
-Protein sequence data: ./data/sequence/example_sequence.csv
+Physicochemical properties: ./data/aaindex/SL_aaindex_feature.csv<br>
+Protein sequence data: ./data/sequence/example_sequence.csv<br>
 
 #### Output file:
 Feature vectors: ./data/sequence/protein_feature_vectors.txt
@@ -107,12 +107,12 @@ Run the script python EAS_09.py to integrate Reward, Penalty, and Dependency met
 #### Output directory: ./Results/
 File naming format: {out_cell_type}_{in_cell_type}_EAS_sort.txt
 
-10. Compute Final Filtered EAS Scores
+### 10. Compute Final Filtered EAS Scores
 Run the script python EAS_CNN_MAPLM_10.py
 
 #### Input files:
-Protein label file: ./data/sequence/example_protein_label.csv (label=1 indicates membrane-associated proteins)
-Original EAS result folder: ./Results/
+Protein label file: ./data/sequence/example_protein_label.csv (label=1 indicates membrane-associated proteins)<br>
+Original EAS result folder: ./Results/<br>
 
 #### Output directory: ./Results_filter/
 File naming format: {out_cell_type}_{in_cell_type}_EAS_sort.txt, representing the filtered final EAS scores after receptor selection
