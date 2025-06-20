@@ -100,9 +100,9 @@ Predicted labels for each protein: values close to 1 indicate membrane-associate
 Run the script python EAS_09.py to integrate Reward, Penalty, and Dependency metrics into a final EAS score.
 
 #### Input directories:
-./Results_Reward/
-./Results_Penalty/
-./Results_Dependency/
+./Results_Reward/<br>
+./Results_Penalty/<br>
+./Results_Dependency/<br>
 
 #### Output directory: ./Results/
 File naming format: {out_cell_type}_{in_cell_type}_EAS_sort.txt
